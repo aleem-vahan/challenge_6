@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Web App - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://localhost:5000/socket.io/socket.io.js"></script>
+    <style>
+        canvas {
+            width: 80%;
+            height: 300px;
+            /* set the height to a fixed value */
+            margin: 0 auto;
+            /* center the canvas horizontally */
+            background-color: #f0f0f0;
+            /* set a background color */
+            display: none;
+            /* hide the canvas by default */
+            position: fixed;
+            /* position the canvas absolutely */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* center the canvas vertically */
+            z-index: 100;
+            /* make the canvas appear on top of other elements */
+        }
+
+        /* CSS styles for the overlay */
+        .overlay {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            /* position the overlay absolutely */
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* set a semi-transparent background color */
+            z-index: 99;
+            /* make the overlay appear below the canvas */
+            display: none;
+            /* hide the overlay by default */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>My Web App</h1>
+        <a href="product.html" class="cta-button">Get Started</a>
+    </header>
+    <canvas id="canvas"></canvas>
+    <div class="overlay"></div>
+    <div id="banner"></div>
+    <button id="restart-button">Restart</button>
+    <section class="hero-section">
+        <h2>Welcome to My Web App</h2>
+        <p>We provide the best solutions for your needs</p>
+    </section>
+
+    <section class="features-section">
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>Feature 1</li>
+            <li>Feature 2</li>
+            <li>Feature 3</li>
+        </ul>
+        <div class="testimonials">
+            <h3>What Our Customers Say</h3>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id est sit amet odio molestie euismod
+                quis in enim. Sed et ante sit amet ligula bibendum malesuada. Curabitur tempor bibendum nisi, id dapibus
+                risus pretium vitae."</p>
+            <p>- John Doe</p>
+        </div>
+    </section>
+    <footer>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 My Web App. All rights reserved.</p>
+    </footer>
+</body>
+<script>
+    const canvas = document.getElementById('canvas');
+    canvas.style.display = 'block';
+
+</script>
+
+<script src="/js/main.js"></script>
+
+</html>
