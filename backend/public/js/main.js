@@ -1,17 +1,28 @@
 
-var socket = io("http://localhost:5000/socket.io/");
+var socket = io("http://localhost:5000", {
+    pingInterval: 10,
+    pingTimeout: 10,
+});
 const canvas = document.getElementById('canvas');
 
 socket.on('connect', () => {
     console.log('Connected to server.');
+    canvas.style.display = 'none';
     // 
+    setInterval(() => {
+        socket.emit("test")
+    },100)
 });
 
 socket.on('disconnect', () => {
     console.log('Disconnected from server.');
-    // canvas.style.display = 'block';
-    // animate();
+    canvas.style.display = 'block';
+    animate();
 });
+
+socket.on('error', () => {
+    console.log("socket error")
+})
 
 // Get the canvas element and context
 // var canvas = document.getElementById('canvas');
@@ -145,6 +156,7 @@ canvas.addEventListener('mousemove', function (event) {
     if (isDragging) {
         hero.x = event.clientX - canvas.offsetLeft + offset.x;
         hero.y = event.clientY - canvas.offsetTop + offset.y;
+        // hero.draw()
     }
 });
 

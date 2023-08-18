@@ -96,9 +96,9 @@
         <p>&copy; 2023 My Web App. All rights reserved.</p>
     </footer>
 </body>
-<script>
+<!-- <script>
 
-    var socket = io("http://localhost:5000/socket.io/");
+    var socket = io();
     const canvas = document.getElementById('canvas');
 
     socket.on('connect', () => {
@@ -108,12 +108,12 @@
 
     socket.on('disconnect', () => {
         console.log('Disconnected from server.');
-        // canvas.style.display = 'block';
-        // animate();
+        canvas.style.display = 'block';
+        animate();
     });
 
 
-</script>
-<!-- <script src="/js/main.js"></script> -->
+</script> -->
+<script src="/js/main.js"></script>
 
 </html>
